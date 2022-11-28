@@ -17,7 +17,8 @@ int main()
 {
 	
 	std::fstream fin("in.txt");
-	if (fin) {
+	
+	if (fin.is_open()) {
 		int a(0);
 		int b(0);
 		fin >> a;
@@ -38,6 +39,7 @@ int main()
 		fout  << "\n" << a << "\n";
 		print_arr_1(a, arr_1, fout);
 		fin.close();
+		fout.close();
 		delete[] arr_1;
 		delete[] arr_2;
 	}
